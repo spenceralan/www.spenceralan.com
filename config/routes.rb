@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index', as: 'home'
+  root "home#show", as: "home"
 
-  resource :home, only: [:index]
+
+  get "/portfolio", to: "portfolio#show", as: 'portfolio'
+  get "/resume", to: "resume#show", as: 'resume'
+
+  resources :blog
 end
