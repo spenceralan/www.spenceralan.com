@@ -14,8 +14,9 @@
  *= require_self
  */
 
-@import "normalize.css";
-@import "typebase.css";
+@import "bootstrap";
+@import "normalize";
+@import "typebase";
 
 html {
   box-sizing: border-box;
@@ -33,11 +34,6 @@ body {
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: #333;
-}
-
 a:hover {
   font-weight: bold;
 }
@@ -52,6 +48,7 @@ a:hover {
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: 70% bottom;
+  background-attachment: fixed;
 }
 
 .loaded {
@@ -72,6 +69,10 @@ a:hover {
   top: 10%;
   font-size: 2rem;
   z-index: 2;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
 }
 
 @media only screen
@@ -99,5 +100,23 @@ a:hover {
   and (max-width: 600px) {
   #content-container {
     font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+@media only screen
+  and (max-height: 640px) {
+  #content-container {
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen
+  and (max-height: 300px) {
+  html {
+    font-size: 75%;
   }
 }
