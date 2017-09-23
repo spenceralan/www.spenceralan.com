@@ -23,8 +23,13 @@ html, body {
   color: #333;
 }
 
-.navbar {
+#navbar {
   box-shadow: 0 18px 100px -30px #333;
+}
+
+#footer {
+  margin-top: 50px;
+  background-color: #333;
 }
 
 a {
@@ -132,6 +137,28 @@ a:hover {
     and (max-height: 300px) {
     html {
       font-size: 75%;
+    }
+  }
+}
+
+#resume-show {
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  .col-lg-4 {
+    p {
+      margin: 0;
+    }
+  }
+
+  .location-position-time {
+    p {
+      margin-top: 0;
     }
   }
 }
