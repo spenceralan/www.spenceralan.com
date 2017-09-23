@@ -24,7 +24,11 @@ html, body {
 }
 
 #navbar {
+  display: block;
   box-shadow: 0 18px 100px -30px #333;
+  .navbar-text {
+    float: right;
+  }
 }
 
 #footer {

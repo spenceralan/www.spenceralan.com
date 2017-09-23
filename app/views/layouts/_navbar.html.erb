@@ -1,5 +1,8 @@
 <nav class="navbar fixed-top navbar-light bg-faded" id="navbar">
   <%= link_to "Spencer Alan", home_path, class: "navbar-brand" %>
+  <span class="navbar-text">
+    <%= params[:controller].capitalize %>
+  </span>
 </nav>
 
 <br>
