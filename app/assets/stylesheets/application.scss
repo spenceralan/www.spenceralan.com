@@ -29,6 +29,7 @@ html, body {
   .navbar-text {
     float: right;
   }
+  margin-bottom: 40px;
 }
 
 #footer {
@@ -146,6 +147,8 @@ a:hover {
 }
 
 #resume-show {
+  margin-top: 100px;
+
   h3 {
     font-size: 1.25rem;
   }
@@ -165,4 +168,43 @@ a:hover {
       margin-top: 0;
     }
   }
+}
+
+#portfolio-show {
+  margin-top: 100px;
+
+  .row {
+    display: flex;
+    padding: 20px;
+  }
+  h3 {
+    padding: 10px;
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    box-shadow: 0px 0px 20px 5px #CCC;
+  }
+
+  .container {
+    & > div:nth-child(even) {
+      @media only screen
+      and (min-width: 768px) {
+        .text {
+          order: 3;
+        }
+        .screenshot {
+          order: 2;
+        }
+        // background-color: red;
+      }
+    }
+    & > div:nth-child(odd) {
+      // background-color: green;
+    }
+  }
+}
+
+#blog-index {
+  margin-top: 100px;
 }
