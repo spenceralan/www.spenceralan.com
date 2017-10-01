@@ -5,4 +5,9 @@ class Project < ApplicationRecord
     original: ["100%", :jpg]
   }
   validates_attachment_content_type :screenshot, content_type: /\Aimage\/.*\z/
+
+  scope :visible, -> { where(visible: true) }
+  scope :hidden, -> { where(visible: false) }
+  scope :ordered, -> { order(:order) }
+  scope :for_display, -> { ordered.visible }
 end

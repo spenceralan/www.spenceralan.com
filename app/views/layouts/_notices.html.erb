@@ -1,5 +1,5 @@
 <% if object.present? && object.errors.any? %>
-  <div class="container notices">
+  <div class="notices">
     <h3>Please fix these errors:</h3>
     <ul>
       <% object.errors.full_messages.each do |message| %>
@@ -10,13 +10,13 @@
 <% end %>
 
 <% if notice %>
-  <div class="container notices">
+  <div class="notices">
     <p class="notice"><%= notice %></p>
   </div>
 <% end %>
 
 <% if alert %>
-  <div class="container notices">
+  <div class="notices">
     <p class="alert"><%= alert %></p>
   </div>
 <% end %>

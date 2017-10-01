@@ -9,7 +9,7 @@
       <%= link_to "New Project", new_project_path %>
     <% end %>
 
-    <% @projects.each do |project| %>
+    <% @projects_for_display.each do |project| %>
 
       <div class="row">
         <div class="project-container">
@@ -30,6 +30,16 @@
           <p><%= project.description %></p>
         </div>
       </div>
+
+    <% end %>
+
+    <% if current_admin && @hidden_projects.present? %>
+      <br>
+      <p>Hidden Projects</p>
+      <br>
+      <% @hidden_projects.each do |project| %>
+        <h3><%= link_to project.title, edit_project_path(project) %></h3>
+      <% end %>
 
     <% end %>
 

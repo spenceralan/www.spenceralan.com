@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_admin!, only: [:index]
 
   def index
-    @projects = Project.all
+    @projects_for_display = Project.for_display
+    @hidden_projects = Project.hidden
   end
   
   def new
