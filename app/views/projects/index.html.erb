@@ -15,7 +15,7 @@
         <div class="project-container">
           <% if project.screenshot.present? %>
             <%= link_to project.link, target: :blank, rel: "noopener noreferrer" do %>
-              <%= image_tag project.screenshot.url %>
+              <%= image_tag project.screenshot.url(:large) %>
             <% end %>
           <% end %>
           <h3>

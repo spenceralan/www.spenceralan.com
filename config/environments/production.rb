@@ -96,6 +96,7 @@ Rails.application.configure do
   #paperclip S3 
   config.paperclip_defaults = {
     storage: :s3,
+    s3_protocol: 'https',
     s3_region: ENV["AWS_S3_REGION"],
     s3_credentials: {
       s3_host_name: ENV["AWS_S3_HOST_NAME"],
