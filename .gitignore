@@ -25,3 +25,6 @@
 
 # Local Paperclip Files
 /public/system/*
+
+# Environment Variables
+.env
