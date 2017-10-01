@@ -1,0 +1,37 @@
+<%= render "layouts/navbar" %>
+
+<div id="projects-index">
+  <div class="container">
+
+    <%= render "layouts/notices", object: nil %>
+
+    <% if current_admin %>
+      <%= link_to "New Project", new_project_path %>
+    <% end %>
+
+    <% @projects.each do |project| %>
+
+      <div class="row">
+        <div class="project-container">
+          <% if project.screenshot.present? %>
+            <%= link_to project.link, target: :blank, rel: "noopener noreferrer" do %>
+              <%= image_tag project.screenshot.url %>
+            <% end %>
+          <% end %>
+          <h3>
+            <%= link_to project.title, project.link, target: :blank, rel: "noopener noreferrer" %>
+            <% if current_admin %>
+              <%= link_to "Edit", edit_project_path(project) %>
+            <% end %>
+          </h3>
+          <% if project.year.present? %>
+            <h4><%= project.year %></h4>
+          <% end %>
+          <p><%= project.description %></p>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

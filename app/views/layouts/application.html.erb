@@ -12,19 +12,6 @@
   </head>
 
   <body>
-
-    <% if notice %>
-      <div class="container notices">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
-
-    <% if alert %>
-      <div class="container notices">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,4 @@
-class BlogController < ApplicationController
+class BlogsController < ApplicationController
   skip_before_action :authenticate_admin!, only: [:index]
 
   def index

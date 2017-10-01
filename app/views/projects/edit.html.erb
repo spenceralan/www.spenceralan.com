@@ -1,0 +1,9 @@
+<%= render "layouts/notices", object: @project %>
+
+<%= render "form" %>
+
+<br>
+
+<div class="container">
+  <%= link_to "Delete Project", project_path(@project), method: :delete, class: "btn btn-danger" %>
+</div>

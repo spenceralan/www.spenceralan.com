@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for @project do |f| %>
+    <%= f.input :visible %>
+    <%= f.input :order %>
+    <%= f.input :title %>
+    <%= f.input :link %>
+    <%= f.input :year %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :screenshot, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

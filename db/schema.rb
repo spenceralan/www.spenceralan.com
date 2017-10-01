@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922005515) do
+ActiveRecord::Schema.define(version: 20171001000628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,22 @@ ActiveRecord::Schema.define(version: 20170922005515) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "projects", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+    t.integer "year"
+    t.string "description"
+    t.integer "order"
+    t.boolean "visible"
+    t.uuid "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "screenshot_file_name"
+    t.string "screenshot_content_type"
+    t.integer "screenshot_file_size"
+    t.datetime "screenshot_updated_at"
   end
 
 end
