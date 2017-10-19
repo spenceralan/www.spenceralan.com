@@ -50,6 +50,7 @@ private
       :description,
       :link,
       :order,
+      :repository,
       :screenshot,
       :title,
       :visible,

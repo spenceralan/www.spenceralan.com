@@ -25,7 +25,13 @@
             <% end %>
           </h3>
           <% if project.year.present? %>
-            <h4><%= project.year %></h4>
+            <h4>
+              <%= project.year %>
+              <% if project.repository.present? %>
+                <%= " - " %>
+                <%= link_to "Repository", project.repository, target: :blank, rel: "noopener noreferrer", title: "Repository" %>
+              <% end %>
+            </h4>
           <% end %>
           <p><%= project.description %></p>
         </div>
