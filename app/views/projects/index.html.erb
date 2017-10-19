@@ -11,29 +11,32 @@
 
     <% @projects_for_display.each do |project| %>
 
-      <div class="row">
-        <div class="project-container">
+      <div class="row clearfix">
+        <div class="project-image">
           <% if project.screenshot.present? %>
             <%= link_to project.link, target: :blank, rel: "noopener noreferrer" do %>
               <%= image_tag project.screenshot.url(:large) %>
             <% end %>
           <% end %>
-          <h3>
-            <%= link_to project.title, project.link, target: :blank, rel: "noopener noreferrer" %>
-            <% if current_admin %>
-              <%= link_to "Edit", edit_project_path(project) %>
-            <% end %>
-          </h3>
-          <% if project.year.present? %>
-            <h4>
-              <%= project.year %>
-              <% if project.repository.present? %>
-                <%= " - " %>
-                <%= link_to "Repository", project.repository, target: :blank, rel: "noopener noreferrer", title: "Repository" %>
+
+          <div class="project-text">
+            <h3>
+              <%= link_to project.title, project.link, target: :blank, rel: "noopener noreferrer" %>
+              <% if current_admin %>
+                <%= link_to "Edit", edit_project_path(project) %>
               <% end %>
-            </h4>
-          <% end %>
-          <p><%= project.description %></p>
+            </h3>
+            <% if project.year.present? %>
+              <h4>
+                <%= project.year %>
+                <% if project.repository.present? %>
+                  <%= " - " %>
+                  <%= link_to "Repository", project.repository, target: :blank, rel: "noopener noreferrer", title: "Repository" %>
+                <% end %>
+              </h4>
+            <% end %>
+            <p><%= project.description %></p>
+          </div>
         </div>
       </div>
 
