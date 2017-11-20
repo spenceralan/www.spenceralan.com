@@ -161,6 +161,18 @@ a:visited {
     font-size: 1rem;
   }
 
+
+  .col {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 75%;
+  }
+
   .col-lg-4 {
     p {
       margin: 0;
@@ -172,6 +184,14 @@ a:visited {
       margin-top: 0;
     }
   }
+
+  @media only screen
+  and (min-width: 768px) {
+    img {
+      width: 50%;
+    }
+  }
+
 }
 
 #projects-index {
